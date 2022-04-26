@@ -8,7 +8,6 @@ interface IService {
   status?: number;
   message?: string;
   meta?: any;
-  y;
 }
 
 const controller: any =
