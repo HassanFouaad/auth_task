@@ -8,17 +8,13 @@ interface IService {
   status?: number;
   message?: string;
   meta?: any;
-  file?: any;
+  y;
 }
 
 const controller: any =
   (service: (req: Request, res?: Response) => Promise<IService>) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    const { error, status, message, data, meta, file } = await service(
-      req,
-      res
-    );
-    if (file) return;
+    const { error, status, message, data, meta } = await service(req, res);
     if (error || status) return next(new ServerError(error, status, data));
 
     return res.json({
