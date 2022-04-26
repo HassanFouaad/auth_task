@@ -2,6 +2,8 @@ import { Request } from "express";
 import { compare } from "bcrypt";
 import { generateUserToken } from "../../../../utils/jwt";
 import { User } from "../../../../../models";
+import { IUserRequest } from "../../../../middlewares/isAuthenticated";
+import { IProfile } from "../../../../../interfaces/profile";
 
 export const loginService = async ({ body }: Request) => {
   try {
@@ -37,4 +39,18 @@ export const loginService = async ({ body }: Request) => {
       status: 500,
     };
   }
+};
+
+export const viewUserProfileService = async ({ user }: IUserRequest) => {
+  const profile: IProfile = {
+    userId: user.id,
+    firstName: "Hassan",
+    lastName: "Fouad",
+    position: "Nodejs Developer",
+  };
+
+  return {
+    message: "Success",
+    data: profile,
+  };
 };

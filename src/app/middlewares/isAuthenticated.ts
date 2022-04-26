@@ -7,7 +7,11 @@ export interface IUserRequest extends Request {
   user: IUser;
 }
 
-const isAuth = async (req: IUserRequest, res: Response, next: NextFunction) => {
+const isAuth: any = async (
+  req: IUserRequest,
+  res: Response,
+  next: NextFunction
+) => {
   /// Getting token from request headers
   const token = req.get("authorization");
 

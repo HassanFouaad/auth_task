@@ -1,6 +1,7 @@
 import { controller } from "../../middlewares/controller";
-import { loginService } from "./services/user";
+import { loginService, viewUserProfileService } from "./services/user";
 
 const loginController = controller(loginService);
+const viewProfileController = controller(viewUserProfileService);
 
-export { loginController };
+export { loginController, viewProfileController };
