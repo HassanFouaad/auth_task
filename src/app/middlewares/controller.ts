@@ -1,4 +1,3 @@
-import logger from "../../core/logger";
 import { ServerError } from "../../core/serverError";
 import { Request, Response, NextFunction } from "express";
 
