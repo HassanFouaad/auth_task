@@ -7,7 +7,6 @@ interface IService {
   error?: string;
   status?: number;
   message?: string;
-  facebookchallenge?: string;
   meta?: any;
   file?: any;
 }
